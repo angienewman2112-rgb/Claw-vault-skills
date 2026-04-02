@@ -1,16 +1,25 @@
+import SkillCard from '@/components/SkillCard';
+
 export default function Home() {
   return (
-    <main className="min-h-screen pt-20">
-      <section className="hero bg-gradient-to-br from-violet-600 to-indigo-600 py-32 text-center">
-        <h1 className="text-7xl font-bold tracking-tighter">Claw Vault Skills</h1>
-        <p className="text-3xl mt-6 max-w-2xl mx-auto">25 Elite OpenClaw Skills • Instant Digital Delivery • Lifetime Updates • Automated Revenue</p>
-        <div className="mt-12">
-          <a href="/skills" className="inline-block bg-white text-black px-12 py-6 rounded-3xl font-semibold text-2xl hover:scale-105 transition-all">
-            Browse All 25 Skills Now
-          </a>
+    <div className="min-h-screen bg-[#0a0a0a] py-12 px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        <h1 className="text-6xl font-bold text-white mb-6">
+          Claw Vault Skills
+        </h1>
+        <p className="text-2xl text-gray-400 mb-12">
+          25 Elite Open Claw AI Skills • High-Ticket • Instant Access
+        </p>
+        
+        <div className="text-violet-400 text-xl mb-16">
+          Your premium marketplace is now live!<br />
+          Skills will load here once fully connected to Supabase.
         </div>
-        <p className="mt-8 text-white/70 text-sm">Live at clawvaultskills.com • High-ticket passive income starts here</p>
-      </section>
-    </main>
+
+        <div className="text-sm text-gray-500">
+          Built for serious business owners who want automated, high-value tools.
+        </div>
+      </div>
+    </div>
   );
 }
