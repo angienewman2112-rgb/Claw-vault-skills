@@ -1,4 +1,4 @@
-SkillCard from '@/components/SkillCard';
+SkillCard';
 
 export default function Home() {
   return (
