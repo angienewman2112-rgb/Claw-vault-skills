@@ -1,11 +1,46 @@
 'use client';
 
 import SkillCard from '@/components/SkillCard';
+import { createClient } from '@/lib/supabase/server';
+import { Suspense } from 'react';
+
+async function SkillsData() {
+  const supabase = await createClient();
+  
+  const { data: skills, error } = await supabase
+    .from('skills')
+    .select('*')
+    .order('price', { ascending: false });
+
+  if (error) {
+    console.error('Supabase error:', error);
+    return <div className="text-red-400 text-center py-12">Error loading skills. Please try again later.</div>;
+  }
+
+  if (!skills || skills.length === 0) {
+    return <div className="text-zinc-500 text-center py-12">No skills found yet. Add them in Supabase Table Editor.</div>;
+  }
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {skills.map((skill: any) => (
+        <SkillCard
+          key={skill.id}
+          id={skill.id}
+          name={skill.name}
+          description={skill.description}
+          price={skill.price}
+          stripePriceId={skill.stripe_price_id}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
-      {/* Hero - Pure Black & Intense */}
+      {/* Hero */}
       <div className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-[radial-gradient(#4f46e510_0.5px,transparent_1px)] bg-[length:4px_4px]"></div>
         
@@ -39,7 +74,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Skills Section */}
+      {/* Dynamic Skills Section */}
       <div id="skills" className="py-28 px-6 border-t border-zinc-900 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -49,13 +84,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Your 25 SkillCard components will appear here once Supabase is fully connected */}
-            <div className="col-span-full text-center py-24 text-zinc-500 text-lg">
-              Your 25 premium skills will load here once Supabase connection is complete.<br />
-              Each one priced for serious ROI.
-            </div>
-          </div>
+          <Suspense fallback={
+            <div className="text-center py-24 text-zinc-500">Loading your premium skills...</div>
+          }>
+            <SkillsData />
+          </Suspense>
         </div>
       </div>
 
