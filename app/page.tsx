@@ -1,3 +1,5 @@
+
+
 import SkillCard from '@/components/SkillCard';
 import { createClient } from '@/lib/supabase/server';
 import { Suspense } from 'react';
