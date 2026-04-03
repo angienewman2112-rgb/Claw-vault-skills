@@ -1,8 +1,8 @@
 'use client';
 
-import SkillCard from '@/components/SkillCard';
-import { createClient } from '@/lib/supabase/server';
-import { Suspense } from 'react';
+import SkillCard from "./components/SkillCard"
+import { createClient } from "./lib/supabase/server"
+  import { Suspense } from 'react';
 
 async function SkillsData() {
   const supabase = await createClient();
