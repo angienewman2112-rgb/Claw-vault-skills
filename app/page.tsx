@@ -15,16 +15,16 @@ export default function Home() {
             <span className="text-violet-400 text-sm tracking-[4px] font-mono">ELITE ACCESS ONLY</span>
           </div>
 
-          <h1 className="text-[92px] md:text-[110px] font-black tracking-[-4px] leading-none mb-8">
+          <h1 className="text-[88px] md:text-[110px] font-black tracking-[-4px] leading-none mb-8">
             CLAW<br />VAULT
           </h1>
 
-          <p className="text-4xl md:text-5xl text-zinc-400 font-light mb-12 max-w-4xl mx-auto">
+          <p className="text-4xl md:text-5xl text-zinc-400 font-light mb-16 max-w-4xl mx-auto">
             25 elite Open Claw skills.<br />
-            For those who refuse to play average.
+            For serious operators who demand results.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
             <a href="#skills" 
                className="bg-white hover:bg-violet-600 text-black hover:text-white px-16 py-7 rounded-2xl text-2xl font-semibold transition-all duration-300">
               ENTER THE VAULT
@@ -35,7 +35,7 @@ export default function Home() {
             </a>
           </div>
 
-          <p className="mt-16 text-xs tracking-widest text-zinc-500">ONE-TIME PURCHASE • INSTANT DELIVERY • NO REFUNDS FOR THE WEAK</p>
+          <p className="text-xs tracking-widest text-zinc-500">ONE-TIME PURCHASE • INSTANT DELIVERY • LIFETIME VALUE</p>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="text-center mb-20">
             <h2 className="text-6xl font-bold mb-6">25 Weapons.<br />Zero Excuses.</h2>
             <p className="text-2xl text-zinc-400 max-w-2xl mx-auto">
-              Battle-tested AI automations for operators who execute at the highest level.
+              Battle-tested AI automations built for operators who execute at the highest level.
             </p>
           </div>
 
