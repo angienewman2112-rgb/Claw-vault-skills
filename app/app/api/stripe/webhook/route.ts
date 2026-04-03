@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+mport { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
 
@@ -25,11 +25,4 @@ export async function POST(req: Request) {
 
     await supabase.from('purchases').insert({
       user_id: session.metadata?.user_id || 'anonymous',
-      skill_id: skillId,
-      stripe_session_id: session.id,
-      amount: session.amount_total,
-    });
-  }
-
-  return NextResponse.json({ received: true });
-}
+      skill_id: skillId
