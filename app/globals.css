@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+ 'tailwindcss';
 
 :root {
   --background: #0a0a0a;
@@ -21,6 +21,4 @@ body {
 
 .skill-card:hover {
   transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 25px 50px -12px rgb(139 92 246 / 0.25);
-}
+  border-color
